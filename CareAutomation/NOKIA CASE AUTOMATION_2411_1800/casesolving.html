@@ -1,0 +1,99 @@
+
+<link rel="stylesheet" href="Styles/casesolving.css">
+<ul class="breadcrumb fntsize">
+  <li><a>Main</a></li>
+  <li><a>Case Solving</a></li> 
+</ul>
+
+
+<div class="row"><p class="h3 col-xs-5"><strong>Ticket Information:</strong></p>
+ <p class="h3 col-xs-offset-1 col-xs-5"><strong>Case Solving Solutions:</strong></p>
+    </div>
+
+<br/>
+<div class="row">
+  <div class="col-sm-5 ">
+
+<form class="form-horizontal">
+  <div class="form-group">
+    <label class="control-label col-xs-3" for="pcCode">Product Code:</label>
+    <div class="col-xs-9">
+      <input type="text" class="form-control" id="pcCode" ng-model="pcCode">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-xs-3" for="caseTitle">Case Title:</label>
+    <div class="col-xs-9"> 
+      <input type="text" class="form-control" id="caseTitle" ng-model="caseTitle">
+    </div>
+  </div>
+ <div class="form-group">
+    <label class="control-label col-xs-3" for="caseDesc">Case Description:</label>
+    <div class="col-xs-9"> 
+      <textarea rows="4" cols="20" class="form-control" id="caseDesc" ng-model="caseDesc"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-xs-3" for="">Date Range:</label>
+    <div class="col-xs-5"> 
+        <p><b>From Date:</b><input type="text" ng-model="fromDate" id="fromDate" class="bkg"/></p>
+        <p><b>To Date:</b><input type="text" ng-model="toDate" id="toDate" class="bkg"/></p>
+    </div>
+  </div>
+
+   <div class="form-group">
+    <label class="control-label col-xs-3">Work Space:</label>
+    <div class="col-xs-9"> 
+      <input type="radio" name="WorkSpace" value="Product" ng-model="rdWS"> Product
+	  <input type="radio" name="WorkSpace" value="Entire" ng-model="rdWS" ng-checked="true"> Entire
+    </div>
+  </div>
+  <div class="form-group">   
+    <div class="col-xs-offset-3 col-xs-9">
+     <span class="colr" ng-if="errorFlag">Please enter valid values for case form</span>
+    </div>
+  </div>
+  <div class="form-group"> 
+    <div class="col-xs-offset-3 col-xs-9">
+      <button class="btn btn-primary" ng-click="searchCase()">Search</button>
+    </div>
+  </div>
+</form>
+</div>
+
+<div class="col-xs-5 col-xs-offset-1 scrolling">
+    <table class="table table-bordered table-responsive">
+    
+      <tr>  
+        <th>SME </th>        
+		<th>Confidence</th>       	
+      </tr>
+   
+      <tr ng-repeat="case in CaseSolutions">
+        <td><a data-toggle="modal" data-target="#searchCase" ng-click="caseSolutionDetail($index)">
+            {{case.simiRec.SME}}</a></td>        
+        <td>{{case.simiRec.confidence *100 | number:2 }}%</td>
+      </tr>     
+
+  </table>
+  </div>
+</div>
+  
+ <div id="searchCase" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title">Case Search:</h3>
+      </div>
+      <div class="modal-body">
+          <div class="row"><div class="col-xs-3"><b>SME: </b></div> <div class="col-xs-7">{{caseSolution.SME}}</div></div>
+          <br/>
+          <div class="row"><div class="col-xs-3"><b>Confidence: </b></div> <div class="col-xs-7">{{caseSolution.confidence *100 | number :2}}%</div></div>
+           <br/>
+      </div>
+    </div>
+
+  </div>
+</div> 
+
