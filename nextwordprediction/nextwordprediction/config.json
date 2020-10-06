@@ -1,0 +1,14 @@
+{
+  "userinput": "sp_Fetch_ChatBotUserInputs",
+  "jiraticket": "sp_Fetch_DisplayAllJiratickets",
+  "logfilepath": "C:/Users/Sinisolarchatbot/Deployments/nextwordprediction/log.txt",
+  "domainNameServer": "SQLSERVER1",
+  "logpath": "C:/Users/Sinisolarchatbot/Deployments/nextwordprediction/nextwordprediction/next_log",
+  "server": "sinsa169.ap.infineon.com",
+  "database": "iSOLARChatbot_INT",
+  "username": "SINisolarchatbot", 
+  "password": "4@y4qljHe\\e624UZAy2l" ,
+  "JiranumberOfDays": 180 ,
+  "JiraDumptestDays": "sp_Fetch_JiraDumpTest_days",
+  "ChatbotUserInput" : "sp_Fetch_ChatbotUserInputs_days"  
+}

@@ -1,0 +1,11 @@
+{
+  "userinput": "sp_Fetch_ChatBotUserInputs",
+  "jiraticket": "sp_Fetch_DisplayAllJiratickets",
+  "logfilepath": "C:/Users/Sinisolarchatbot/Deployments/nextwordprediction/log.txt",
+  "domainNameServer": "SQLSERVER1",
+  "logpath": "C:/Users/Sinisolarchatbot/Deployments/nextwordprediction/nextwordprediction/next_log",
+  "server": "tcp:sinsa169.ap.infineon.com",
+  "database": "iSOLARChatbot_INT",
+  "username": "SINisolarchatbot", 
+  "password": "4@y4qljHe\\e624UZAy2l"   
+}
